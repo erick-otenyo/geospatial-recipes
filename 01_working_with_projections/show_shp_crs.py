@@ -26,7 +26,7 @@ print shp_srs
 
 # function
 
-def show_shp_srs(shp_path):
+def show_shp_crs(shp_path):
 	shp_driver = ogr.GetDriverByName('Esri Shapefile')
 	shp_dataset = shp_driver.Open(r'{}'.format(shp_path))
 	shp_layer = shp_dataset.GetLayer()

@@ -29,25 +29,16 @@ else:
 def show_geojson_crs(geojson_file):
 	with open(geojson_file) as my_geojson:
 		data = json.load(my_geojson)
-	if data:
-		if 'crs' in data:
-			print "the crs is : " + data['crs']['properties']['name']
-		else:
-			print "++++++ no crs tag in file+++++"
-			print "++++++ assume EPSG:4326 ++++++"
-			if "type" in data:
-				print "current GeoJSON data type is :" + data['type']
+	
+	if 'crs' in data:
+		print "the crs is : " + data['crs']['properties']['name']
 	else:
-		print "cant open file"
+		print "++++++ no cr+s tag in file+++++"
+		print "++++++ assume EPSG:4326 ++++++"
+		if "type" in data:
+			print "current GeoJSON data type is :" + data['type']
 
 
 show_geojson_crs(geojson_yes_crs)
-
-
-# Projection definitions
-
-#  1. Esri Well-Known Text
-
-
 
 
